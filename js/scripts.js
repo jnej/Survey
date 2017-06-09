@@ -1,17 +1,17 @@
 $(document).ready(function() {
   $("#survey").submit(function(event) {
     var name = $("#name").val();
-    var age1 = $("#age1").val();
-    var age2 = $("#age2").val();
-    var age3 = $("#age3").val();
-    var age4 = $("#age4").val();
+    var age = $("input:radio[name=age]:checked").val();
 
-  alert("thank you for filling out the survey!");
-  
+    $(".name").text(name);
+    $(".age").text(age);
 
-  event.preventDefault();
+    $(".answer").show();
+    event.preventDefault();
+  });
+  $(".answer").click(function(event) {
+    alert("Thank you for taking time to answer our survey, Hope you have a great day!");
+
+    event.preventDefault();
   })
-
-
-
-})
+});
